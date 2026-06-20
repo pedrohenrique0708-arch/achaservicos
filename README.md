@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback } from 'react'
+import from 'react'
 import { Wrench, Paintbrush, Zap, Sparkles, Hammer, Leaf, Palette, Laptop } from 'lucide-react'
 import Link from 'next/link'
 
