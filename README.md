@@ -1,6 +1,5 @@
 'use client'
 
-import from 'react'
 import { Wrench, Paintbrush, Zap, Sparkles, Hammer, Leaf, Palette, Laptop } from 'lucide-react'
 import Link from 'next/link'
 
@@ -27,9 +26,9 @@ interface CategoryGridProps {
 }
 
 export default function CategoryGrid({ categorias, onCategoriaClick }: CategoryGridProps) {
-  const handleClick = useCallback((id: string) => {
+  const handleClick = (id: string) => {
     onCategoriaClick(id)
-  }, [onCategoriaClick])
+  }
 
   return (
     <div className="grid grid-cols-4 gap-4 p-4">
@@ -39,10 +38,10 @@ export default function CategoryGrid({ categorias, onCategoriaClick }: CategoryG
           <button
             key={cat.id}
             onClick={() => handleClick(cat.id)}
-            className="flex flex-col items-center gap-2 p-3 bg-white rounded-xl shadow-sm hover:shadow-md transition"
+            className="flex flex-col items-center gap-2 p-3 bg-white rounded-xl shadow-sm hover:shadow-md transition active:scale-95"
           >
             <Icone className="w-8 h-8 text-blue-600" />
-            <span className="text-sm text-gray-700">{cat.nome}</span>
+            <span className="text-sm font-medium text-gray-700">{cat.nome}</span>
           </button>
         )
       })}
